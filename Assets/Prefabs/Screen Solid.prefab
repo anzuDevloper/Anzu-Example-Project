@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 23205429616951430}
   - component: {fileID: 114293327941569524}
   - component: {fileID: 114451956691407926}
+  - component: {fileID: 114673820550466982}
   m_Layer: 0
   m_Name: Monitor
   m_TagString: Untagged
@@ -70,7 +71,7 @@ Transform:
   m_GameObject: {fileID: 1544776967737278}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
   m_LocalPosition: {x: 0, y: 0.838, z: 0.22}
-  m_LocalScale: {x: 2.0235653, y: 1.1498855, z: 0.41456658}
+  m_LocalScale: {x: 2.0235653, y: 1.1498855, z: 1}
   m_Children: []
   m_Father: {fileID: 4232870546608982}
   m_RootOrder: 0
@@ -215,6 +216,17 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967291
   targetTexture: {fileID: 0}
-  defaultClip: Shrink_to_Fit.png
+  defaultClip: Placement 2x3 Shrink to Fit.jpg
   fallbackTimeout: 5
   logoPlacements: []
+--- !u!114 &114673820550466982
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1544776967737278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 098ab09d152191c4baad85214498a631, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

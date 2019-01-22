@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 64525920327550714}
   - component: {fileID: 114163268062041344}
   - component: {fileID: 114970981258572036}
+  - component: {fileID: 114352867180055394}
   m_Layer: 0
   m_Name: Upper Monitor
   m_TagString: Untagged
@@ -80,6 +81,7 @@ GameObject:
   - component: {fileID: 64794000339424558}
   - component: {fileID: 114962155483691488}
   - component: {fileID: 114900257912651142}
+  - component: {fileID: 114162943045926326}
   m_Layer: 0
   m_Name: Lower Monitor
   m_TagString: Untagged
@@ -101,6 +103,7 @@ GameObject:
   - component: {fileID: 64737082989529740}
   - component: {fileID: 114487897817913052}
   - component: {fileID: 114780981822681604}
+  - component: {fileID: 114314252991759492}
   m_Layer: 0
   m_Name: Back Monitor
   m_TagString: Untagged
@@ -139,6 +142,7 @@ GameObject:
   - component: {fileID: 64503241374614850}
   - component: {fileID: 114458736869092250}
   - component: {fileID: 114390464915826156}
+  - component: {fileID: 114573697048911310}
   m_Layer: 0
   m_Name: Right Monitor
   m_TagString: Untagged
@@ -177,6 +181,7 @@ GameObject:
   - component: {fileID: 64135797351247404}
   - component: {fileID: 114456414237811154}
   - component: {fileID: 114190929385068422}
+  - component: {fileID: 114764280158298232}
   m_Layer: 0
   m_Name: Left Monitor
   m_TagString: Untagged
@@ -232,6 +237,7 @@ GameObject:
   - component: {fileID: 64018540855434850}
   - component: {fileID: 114790760468167854}
   - component: {fileID: 114200538115897008}
+  - component: {fileID: 114965886756283128}
   m_Layer: 0
   m_Name: Front Monitor
   m_TagString: Untagged
@@ -1183,6 +1189,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114162943045926326
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1222808950947108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 098ab09d152191c4baad85214498a631, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114163268062041344
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1225,7 +1242,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967291
   targetTexture: {fileID: 0}
-  defaultClip: Aspect_Ratio_2_3.png
+  defaultClip: Placement 2x3 FlipY.jpg
   fallbackTimeout: 5
   logoPlacements: []
 --- !u!114 &114200538115897008
@@ -1258,9 +1275,31 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967291
   targetTexture: {fileID: 0}
-  defaultClip: Aspect_Ratio_4_3.png
+  defaultClip: Placement 4x3 FlipY.jpg
   fallbackTimeout: 5
   logoPlacements: []
+--- !u!114 &114314252991759492
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1238137847981270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 098ab09d152191c4baad85214498a631, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114352867180055394
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1003566175264930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 098ab09d152191c4baad85214498a631, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114390464915826156
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1291,7 +1330,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967291
   targetTexture: {fileID: 0}
-  defaultClip: Aspect_Ratio_2_3.png
+  defaultClip: Placement 2x3 FlipY.jpg
   fallbackTimeout: 5
   logoPlacements: []
 --- !u!114 &114456414237811154
@@ -1330,6 +1369,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fontSize: 20
+--- !u!114 &114573697048911310
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1365917573140416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 098ab09d152191c4baad85214498a631, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114764280158298232
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1520793888204596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 098ab09d152191c4baad85214498a631, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114780981822681604
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1360,7 +1421,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967291
   targetTexture: {fileID: 0}
-  defaultClip: Aspect_Ratio_4_3.png
+  defaultClip: Placement 4x3 FlipY.jpg
   fallbackTimeout: 5
   logoPlacements: []
 --- !u!114 &114790760468167854
@@ -1405,7 +1466,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967291
   targetTexture: {fileID: 0}
-  defaultClip: Aspect_Ratio_2_1.png
+  defaultClip: Placement 2x1 FlipY.jpg
   fallbackTimeout: 5
   logoPlacements: []
 --- !u!114 &114962155483691488
@@ -1420,6 +1481,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fontSize: 20
+--- !u!114 &114965886756283128
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1629493595723944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 098ab09d152191c4baad85214498a631, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114970981258572036
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1450,6 +1522,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967291
   targetTexture: {fileID: 0}
-  defaultClip: Aspect_Ratio_2_1.png
+  defaultClip: Placement 2x1 FlipY.jpg
   fallbackTimeout: 5
   logoPlacements: []

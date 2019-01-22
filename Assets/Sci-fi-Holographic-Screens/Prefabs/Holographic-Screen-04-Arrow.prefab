@@ -218,6 +218,7 @@ GameObject:
   - component: {fileID: 64320561948270458}
   - component: {fileID: 114829727264584370}
   - component: {fileID: 114312261229149026}
+  - component: {fileID: 114015652518166432}
   - component: {fileID: 95028091950341132}
   m_Layer: 0
   m_Name: Cylinder
@@ -313,6 +314,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114015652518166432
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1729059156156144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 098ab09d152191c4baad85214498a631, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114312261229149026
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -355,7 +367,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967291
   targetTexture: {fileID: 0}
-  defaultClip: Aspect_Ratio_3_2.png
+  defaultClip: Placement 1x1 FlipY.jpg
   fallbackTimeout: 5
   logoPlacements: []
 --- !u!136 &136006449299292824
