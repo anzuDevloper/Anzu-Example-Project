@@ -9,8 +9,6 @@ using System.Reflection;
 public class InspectorController : MonoBehaviourEx
 {
     public static InspectorController CopiedInspector = null;
-    public static Transformation CopiedTransformation = null;
-    public static RectTransformation CopiedRectTransformation = null;
     List<Component> Components = new List<Component>();
 
 
@@ -36,24 +34,6 @@ public class InspectorController : MonoBehaviourEx
         if (CopiedInspector == null)
             return;
 
-        //ClearPreviousInspector();
-        //ExecuteAtNextFrame(() => SetupNewInspector());
-        StartCoroutine(DoShit());
-    }
-
-
-
-    IEnumerator DoShit()
-    {
-        ClearPreviousInspector();
-        SetupNewInspector();
-        yield return null;
-    }
-
-
-
-    void ClearPreviousInspector()
-    {
         System.Type type;
 
         foreach (Component component in Components)
@@ -65,18 +45,12 @@ public class InspectorController : MonoBehaviourEx
                 DestroyImmediate(component);
             }
         }
-    }
 
-
-
-    void SetupNewInspector()
-    {
         gameObject.name = CopiedInspector.gameObject.name;
         gameObject.tag = CopiedInspector.gameObject.tag;
         gameObject.layer = CopiedInspector.gameObject.layer;
 
         Components.Clear();
-        System.Type type;
         Component tempComponent;
 
         foreach (Component component in CopiedInspector.Components)
