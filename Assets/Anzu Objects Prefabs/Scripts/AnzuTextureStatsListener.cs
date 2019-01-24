@@ -16,6 +16,9 @@ public class AnzuTextureStatsListener : MonoBehaviour
 
     private void OnMouseDown()
     {
-        PlacementStats.enabled = !PlacementStats.enabled;
+        if (!OverlayController.IsActive)
+        {
+            PlacementStats.enabled = !PlacementStats.enabled;
+        }
     }
 }
