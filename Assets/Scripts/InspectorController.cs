@@ -39,7 +39,7 @@ public class InspectorController : MonoBehaviourEx
         foreach (Component component in Components)
         {
             type = component.GetType();
-
+            
             if ((type != typeof(InspectorController)) && (type != typeof(Transform)) && (type != typeof(RectTransform)))
             {
                 DestroyImmediate(component);

@@ -488,89 +488,88 @@ public static class YevgenyShortcuts
     /// <summary>
     /// Where is the target relatively to the origin? In front? Behind? To the Left? To the Right? Above? Below?
     /// </summary>
-    public static RelativeDirection FindRelativeDirection(this Transform target, Transform origin, float heightThreshold = 0)
-    {
-        if (heightThreshold != 0)
-        {
-            heightThreshold = Mathf.Abs(heightThreshold);
+    //public static RelativeDirection FindRelativeDirection(this Transform target, Transform origin, float heightThreshold = 0)
+    //{
+    //    if (heightThreshold != 0)
+    //    {
+    //        heightThreshold = Mathf.Abs(heightThreshold);
 
-            if (target.position.y > origin.position.y + heightThreshold)
-            {
-                return RelativeDirection.Above;
-            }
-            else if (target.position.y < origin.position.y - heightThreshold)
-            {
-                return RelativeDirection.Below;
-            }
-        }
+    //        if (target.position.y > origin.position.y + heightThreshold)
+    //        {
+    //            return RelativeDirection.Above;
+    //        }
+    //        else if (target.position.y < origin.position.y - heightThreshold)
+    //        {
+    //            return RelativeDirection.Below;
+    //        }
+    //    }
 
-        Vector3 frontPoint = origin.position + origin.forward * 10;
-        float angleToFrontPoint = origin.AngleTo(frontPoint);
-        float angleOffset = angleToFrontPoint;
-        angleToFrontPoint = 0;
-        float angleToTarget = origin.AngleTo(target) - angleOffset;
+    //    Vector3 frontPoint = origin.position + origin.forward * 10;
+    //    float angleToFrontPoint = origin.AngleTo(frontPoint);
+    //    float angleOffset = angleToFrontPoint;
+    //    angleToFrontPoint = 0;
+    //    float angleToTarget = origin.AngleTo(target) - angleOffset;
 
-        if ((angleToTarget >= 315) || (angleToTarget <= 45))
-        {
-            return RelativeDirection.InFront;
-        }
-        else if ((angleToTarget > 45) && (angleToTarget < 135))
-        {
-            return RelativeDirection.ToTheRight;
-        }
-        else if ((angleToTarget >= 135) && (angleToTarget <= 225))
-        {
-            return RelativeDirection.Behind;
-        }
-        else if ((angleToTarget > 225) && (angleToTarget < 315))
-        {
-            return RelativeDirection.ToTheRight;
-        }
+    //    if ((angleToTarget >= 315) || (angleToTarget <= 45))
+    //    {
+    //        return RelativeDirection.InFront;
+    //    }
+    //    else if ((angleToTarget > 45) && (angleToTarget < 135))
+    //    {
+    //        return RelativeDirection.ToTheRight;
+    //    }
+    //    else if ((angleToTarget >= 135) && (angleToTarget <= 225))
+    //    {
+    //        return RelativeDirection.Behind;
+    //    }
+    //    else if ((angleToTarget > 225) && (angleToTarget < 315))
+    //    {
+    //        return RelativeDirection.ToTheRight;
+    //    }
 
-        return RelativeDirection.InFront;
-    }
+    //    return RelativeDirection.InFront;
+    //}
 
     #endregion
 
     #endregion
 
     #region Angles
+    
+    ///// <summary>
+    ///// Return an angle from point to point using the 360 degrees scale 
+    ///// </summary>
+    //public static float AngleTo(this Transform origin, Transform target, float offset = 105)
+    //{
+    //    return Vector3.SignedAngle(origin.position, target.position, Vector3.up) + offset;
+    //}
 
 
-    /// <summary>
-    /// Return an angle from point to point using the 360 degrees scale 
-    /// </summary>
-    public static float AngleTo(this Transform origin, Transform target, float offset = 105)
-    {
-        return Vector3.SignedAngle(origin.position, target.position, Vector3.up) + offset;
-    }
+    ///// <summary>
+    ///// Return an angle from point to point using the 360 degrees scale 
+    ///// </summary>
+    //public static float AngleTo(this Transform origin, Vector3 target, float offset = 105)
+    //{
+    //    return Vector3.SignedAngle(target, origin.position, Vector3.up) + offset;
+    //}
 
 
-    /// <summary>
-    /// Return an angle from point to point using the 360 degrees scale 
-    /// </summary>
-    public static float AngleTo(this Transform origin, Vector3 target, float offset = 105)
-    {
-        return Vector3.SignedAngle(target, origin.position, Vector3.up) + offset;
-    }
+    ///// <summary>
+    ///// Return an angle from point to point using the 360 degrees scale 
+    ///// </summary>
+    //public static float AngleTo(this Vector3 origin, Transform target, float offset = 105)
+    //{
+    //    return Vector3.SignedAngle(target.position, origin, Vector3.up) + offset;
+    //}
 
 
-    /// <summary>
-    /// Return an angle from point to point using the 360 degrees scale 
-    /// </summary>
-    public static float AngleTo(this Vector3 origin, Transform target, float offset = 105)
-    {
-        return Vector3.SignedAngle(target.position, origin, Vector3.up) + offset;
-    }
-
-
-    /// <summary>
-    /// Return an angle from point to point using the 360 degrees scale 
-    /// </summary>
-    public static float AngleTo(this Vector3 origin, Vector3 target, float offset = 105)
-    {
-        return Vector3.SignedAngle(target, origin, Vector3.up) + offset;
-    }
+    ///// <summary>
+    ///// Return an angle from point to point using the 360 degrees scale 
+    ///// </summary>
+    //public static float AngleTo(this Vector3 origin, Vector3 target, float offset = 105)
+    //{
+    //    return Vector3.SignedAngle(target, origin, Vector3.up) + offset;
+    //}
 
     #endregion
 
@@ -2542,32 +2541,32 @@ public static class YevgenyShortcuts
 
     #region Particles - Radial Velocity
 
-    public static void SetRadialVelocity(this ParticleSystem particleSystem, ParticleSystem.MinMaxCurve minMaxCurve)
-    {
-        velocityOverLifetime = particleSystem.velocityOverLifetime;
-        velocityOverLifetime.radial = minMaxCurve;
-    }
+    //public static void SetRadialVelocity(this ParticleSystem particleSystem, ParticleSystem.MinMaxCurve minMaxCurve)
+    //{
+    //    velocityOverLifetime = particleSystem.velocityOverLifetime;
+    //    velocityOverLifetime.radial = minMaxCurve;
+    //}
 
 
 
-    public static void SetRadialVelocity(this ParticleSystem particleSystem, float rate)
-    {
-        velocityOverLifetime = particleSystem.velocityOverLifetime;
-        minMaxCurve = velocityOverLifetime.radial;
-        minMaxCurve.constant = rate;
-        velocityOverLifetime.radial = minMaxCurve;
-    }
+    //public static void SetRadialVelocity(this ParticleSystem particleSystem, float rate)
+    //{
+    //    velocityOverLifetime = particleSystem.velocityOverLifetime;
+    //    minMaxCurve = velocityOverLifetime.radial;
+    //    minMaxCurve.constant = rate;
+    //    velocityOverLifetime.radial = minMaxCurve;
+    //}
 
 
 
-    public static void SetRadialVelocity(this ParticleSystem particleSystem, ClampedFloat clampedFloat)
-    {
-        velocityOverLifetime = particleSystem.velocityOverLifetime;
-        minMaxCurve = velocityOverLifetime.radial;
-        minMaxCurve.constantMin = clampedFloat.Min;
-        minMaxCurve.constantMax = clampedFloat.Max;
-        velocityOverLifetime.radial = minMaxCurve;
-    }
+    //public static void SetRadialVelocity(this ParticleSystem particleSystem, ClampedFloat clampedFloat)
+    //{
+    //    velocityOverLifetime = particleSystem.velocityOverLifetime;
+    //    minMaxCurve = velocityOverLifetime.radial;
+    //    minMaxCurve.constantMin = clampedFloat.Min;
+    //    minMaxCurve.constantMax = clampedFloat.Max;
+    //    velocityOverLifetime.radial = minMaxCurve;
+    //}
 
     #endregion
 
@@ -4428,13 +4427,13 @@ public class Vector3Range
     /// <summary>
     /// Returns Second.AngleTo(First);
     /// </summary>
-    public float AngleToFirst
-    {
-        get
-        {
-            return Second.AngleTo(First);
-        }
-    }
+    //public float AngleToFirst
+    //{
+    //    get
+    //    {
+    //        return Second.AngleTo(First);
+    //    }
+    //}
 
     /// <summary>
     /// Returns Vector3.Angle(Second, First);
@@ -4450,13 +4449,13 @@ public class Vector3Range
     /// <summary>
     /// Returns First.AngleTo(Second);
     /// </summary>
-    public float AngleToSecond
-    {
-        get
-        {
-            return First.AngleTo(Second);
-        }
-    }
+    //public float AngleToSecond
+    //{
+    //    get
+    //    {
+    //        return First.AngleTo(Second);
+    //    }
+    //}
 
     /// <summary>
     /// Returns Second.DirectionToPoint(First);
@@ -6562,14 +6561,14 @@ public class BoolChangeEvent : UnityEvent<bool> { }
 /// <summary>
 /// An extended version of PlayerPrefs, allowing the user to save more types of parameters
 /// </summary>
-public class PlayerPrefsEx : PlayerPrefs
+public class PlayerPrefsEx
 {
     /// <summary>
     /// Sets the value of the preference identified by key
     /// </summary>
     public static void SetBool(string key, bool value)
     {
-        SetInt(key, value ? 1 : 0);
+        PlayerPrefs.SetInt(key, value ? 1 : 0);
     }
 
 
@@ -6578,7 +6577,7 @@ public class PlayerPrefsEx : PlayerPrefs
     /// </summary>
     public static bool GetBool(string key, bool defaultValue = true)
     {
-        return GetInt(key, defaultValue ? 1 : 0) == 1;
+        return PlayerPrefs.GetInt(key, defaultValue ? 1 : 0) == 1;
     }
 
 
@@ -6588,9 +6587,9 @@ public class PlayerPrefsEx : PlayerPrefs
     /// </summary>
     public static void SetVector3(string key, Vector3 vector3)
     {
-        SetFloat(key + "x", vector3.x);
-        SetFloat(key + "y", vector3.y);
-        SetFloat(key + "z", vector3.z);
+        PlayerPrefs.SetFloat(key + "x", vector3.x);
+        PlayerPrefs.SetFloat(key + "y", vector3.y);
+        PlayerPrefs.SetFloat(key + "z", vector3.z);
     }
 
 
@@ -6600,9 +6599,9 @@ public class PlayerPrefsEx : PlayerPrefs
     /// </summary>
     public static Vector3 GetVector3(string key)
     {
-        float x = GetFloat(key + "x", 0);
-        float y = GetFloat(key + "y", 0);
-        float z = GetFloat(key + "z", 0);
+        float x = PlayerPrefs.GetFloat(key + "x", 0);
+        float y = PlayerPrefs.GetFloat(key + "y", 0);
+        float z = PlayerPrefs.GetFloat(key + "z", 0);
         return new Vector3(x, y, z);
     }
 
@@ -6613,8 +6612,8 @@ public class PlayerPrefsEx : PlayerPrefs
     /// </summary>
     public static void SetVector2(string key, Vector2 vector2)
     {
-        SetFloat(key + "x", vector2.x);
-        SetFloat(key + "y", vector2.y);
+        PlayerPrefs.SetFloat(key + "x", vector2.x);
+        PlayerPrefs.SetFloat(key + "y", vector2.y);
     }
 
 
@@ -6624,8 +6623,8 @@ public class PlayerPrefsEx : PlayerPrefs
     /// </summary>
     public static Vector3 GetVector2(string key)
     {
-        float x = GetFloat(key + "x", 0);
-        float y = GetFloat(key + "y", 0);
+        float x = PlayerPrefs.GetFloat(key + "x", 0);
+        float y = PlayerPrefs.GetFloat(key + "y", 0);
         return new Vector2(x, y);
     }
 
@@ -6636,8 +6635,8 @@ public class PlayerPrefsEx : PlayerPrefs
     /// </summary>
     public static void SetClampedFloat(string key, ClampedFloat clampedFloat)
     {
-        SetFloat(key + "max", clampedFloat.Min);
-        SetFloat(key + "min", clampedFloat.Max);
+        PlayerPrefs.SetFloat(key + "max", clampedFloat.Min);
+        PlayerPrefs.SetFloat(key + "min", clampedFloat.Max);
     }
 
 
@@ -6647,8 +6646,8 @@ public class PlayerPrefsEx : PlayerPrefs
     /// </summary>
     public static ClampedFloat GetClampedFloat(string key)
     {
-        float min = GetFloat(key + "min", 0);
-        float max = GetFloat(key + "max", 1);
+        float min = PlayerPrefs.GetFloat(key + "min", 0);
+        float max = PlayerPrefs.GetFloat(key + "max", 1);
         return new ClampedFloat(min, max).Verified;
     }
 
@@ -6659,8 +6658,8 @@ public class PlayerPrefsEx : PlayerPrefs
     /// </summary>
     public static void SetClampedInt(string key, ClampedInt clampedInt)
     {
-        SetInt(key + "max", clampedInt.Min);
-        SetInt(key + "min", clampedInt.Max);
+        PlayerPrefs.SetInt(key + "max", clampedInt.Min);
+        PlayerPrefs.SetInt(key + "min", clampedInt.Max);
     }
 
 
@@ -6670,8 +6669,8 @@ public class PlayerPrefsEx : PlayerPrefs
     /// </summary>
     public static ClampedInt GetClampedInt(string key)
     {
-        int min = GetInt(key + "min", 0);
-        int max = GetInt(key + "max", 1);
+        int min = PlayerPrefs.GetInt(key + "min", 0);
+        int max = PlayerPrefs.GetInt(key + "max", 1);
         return new ClampedInt(min, max).Verified;
     }
 
@@ -6682,10 +6681,10 @@ public class PlayerPrefsEx : PlayerPrefs
     /// </summary>
     public static void SetColor(string key, Color color)
     {
-        SetFloat(key + "r", color.r);
-        SetFloat(key + "g", color.g);
-        SetFloat(key + "b", color.b);
-        SetFloat(key + "a", color.a);
+        PlayerPrefs.SetFloat(key + "r", color.r);
+        PlayerPrefs.SetFloat(key + "g", color.g);
+        PlayerPrefs.SetFloat(key + "b", color.b);
+        PlayerPrefs.SetFloat(key + "a", color.a);
     }
 
 
@@ -6695,10 +6694,10 @@ public class PlayerPrefsEx : PlayerPrefs
     /// </summary>
     public static void GetColor(string key)
     {
-        float r = GetFloat(key + "r", 0);
-        float g = GetFloat(key + "g", 0);
-        float b = GetFloat(key + "b", 0);
-        float a = GetFloat(key + "a", 0);
+        float r = PlayerPrefs.GetFloat(key + "r", 0);
+        float g = PlayerPrefs.GetFloat(key + "g", 0);
+        float b = PlayerPrefs.GetFloat(key + "b", 0);
+        float a = PlayerPrefs.GetFloat(key + "a", 0);
     }
 
 
@@ -6758,7 +6757,7 @@ public class PlayerPrefsEx : PlayerPrefs
     {
         for (int i = 0; i < myList.Count; i++)
         {
-            SetInt(key + i.ToString(), myList[i]);
+            PlayerPrefs.SetInt(key + i.ToString(), myList[i]);
         }
     }
 
@@ -6772,9 +6771,9 @@ public class PlayerPrefsEx : PlayerPrefs
         int i = 0;
         List<int> myList = new List<int>();
 
-        while (HasKey(key + i.ToString()))
+        while (PlayerPrefs.HasKey(key + i.ToString()))
         {
-            myList.Add(GetInt(key + i.ToString()));
+            myList.Add(PlayerPrefs.GetInt(key + i.ToString()));
             i++;
         }
 
@@ -6790,7 +6789,7 @@ public class PlayerPrefsEx : PlayerPrefs
     {
         for (int i = 0; i < myList.Count; i++)
         {
-            SetFloat(key + i.ToString(), myList[i]);
+            PlayerPrefs.SetFloat(key + i.ToString(), myList[i]);
         }
     }
 
@@ -6804,9 +6803,9 @@ public class PlayerPrefsEx : PlayerPrefs
         int i = 0;
         List<float> myList = new List<float>();
 
-        while (HasKey(key + i.ToString()))
+        while (PlayerPrefs.HasKey(key + i.ToString()))
         {
-            myList.Add(GetFloat(key + i.ToString()));
+            myList.Add(PlayerPrefs.GetFloat(key + i.ToString()));
             i++;
         }
 
@@ -6822,7 +6821,7 @@ public class PlayerPrefsEx : PlayerPrefs
     {
         for (int i = 0; i < myList.Count; i++)
         {
-            SetString(key + i.ToString(), myList[i]);
+            PlayerPrefs.SetString(key + i.ToString(), myList[i]);
         }
     }
 
@@ -6836,9 +6835,9 @@ public class PlayerPrefsEx : PlayerPrefs
         int i = 0;
         List<string> myList = new List<string>();
 
-        while (HasKey(key + i.ToString()))
+        while (PlayerPrefs.HasKey(key + i.ToString()))
         {
-            myList.Add(GetString(key + i.ToString()));
+            myList.Add(PlayerPrefs.GetString(key + i.ToString()));
             i++;
         }
 
@@ -6868,7 +6867,7 @@ public class PlayerPrefsEx : PlayerPrefs
         int i = 0;
         List<bool> myList = new List<bool>();
 
-        while (HasKey(key + i.ToString()))
+        while (PlayerPrefs.HasKey(key + i.ToString()))
         {
             myList.Add(GetBool(key + i.ToString()));
             i++;
@@ -6884,35 +6883,35 @@ public class PlayerPrefsEx : PlayerPrefs
     /// </summary>
     public static bool HasKeyEx(string key)
     {
-        if (HasKey(key))
+        if (PlayerPrefs.HasKey(key))
             return true;
 
-        bool hasX = HasKey(key + "x");
-        bool hasY = HasKey(key + "y");
-        bool hasZ = HasKey(key + "z");
+        bool hasX = PlayerPrefs.HasKey(key + "x");
+        bool hasY = PlayerPrefs.HasKey(key + "y");
+        bool hasZ = PlayerPrefs.HasKey(key + "z");
 
         if (hasX && hasY && hasZ)
             return true;
         else if (hasX && hasY)
             return true;
 
-        bool hasR = HasKey(key + "r");
-        bool hasG = HasKey(key + "g");
-        bool hasB = HasKey(key + "b");
-        bool hasA = HasKey(key + "a");
+        bool hasR = PlayerPrefs.HasKey(key + "r");
+        bool hasG = PlayerPrefs.HasKey(key + "g");
+        bool hasB = PlayerPrefs.HasKey(key + "b");
+        bool hasA = PlayerPrefs.HasKey(key + "a");
 
         if (hasR && hasG && hasB && hasA)
             return true;
         if (hasR && hasG && hasB)
             return true;
 
-        bool hasMin = HasKey(key + "min");
-        bool hasMax = HasKey(key + "max");
+        bool hasMin = PlayerPrefs.HasKey(key + "min");
+        bool hasMax = PlayerPrefs.HasKey(key + "max");
 
         if (hasMin && hasMax)
             return true;
 
-        if (HasKey(key + "0"))
+        if (PlayerPrefs.HasKey(key + "0"))
             return true;
 
         return false;
@@ -6925,22 +6924,22 @@ public class PlayerPrefsEx : PlayerPrefs
     /// </summary>
     public static void DeleteKeyEx(string key)
     {
-        DeleteKey(key);
-        DeleteKey(key + "x");
-        DeleteKey(key + "y");
-        DeleteKey(key + "z");
-        DeleteKey(key + "r");
-        DeleteKey(key + "g");
-        DeleteKey(key + "b");
-        DeleteKey(key + "a");
-        DeleteKey(key + "min");
-        DeleteKey(key + "max");
+        PlayerPrefs.DeleteKey(key);
+        PlayerPrefs.DeleteKey(key + "x");
+        PlayerPrefs.DeleteKey(key + "y");
+        PlayerPrefs.DeleteKey(key + "z");
+        PlayerPrefs.DeleteKey(key + "r");
+        PlayerPrefs.DeleteKey(key + "g");
+        PlayerPrefs.DeleteKey(key + "b");
+        PlayerPrefs.DeleteKey(key + "a");
+        PlayerPrefs.DeleteKey(key + "min");
+        PlayerPrefs.DeleteKey(key + "max");
 
         int i = 0;
 
-        while (HasKey(key + i.ToString()))
+        while (PlayerPrefs.HasKey(key + i.ToString()))
         {
-            DeleteKey(key + i.ToString());
+            PlayerPrefs.DeleteKey(key + i.ToString());
             i++;
         }
     }
