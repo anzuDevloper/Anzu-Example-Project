@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using anzu;
 
+#if ANZU_SDK_USED
+
+using anzu;
 
 public class AnzuTextureStatsManager : MonoBehaviour
 {
@@ -52,3 +54,5 @@ public class AnzuTextureStatsManager : MonoBehaviour
         }
     }
 }
+
+#endif

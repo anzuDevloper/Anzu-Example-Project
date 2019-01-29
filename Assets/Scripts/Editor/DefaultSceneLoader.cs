@@ -1,9 +1,14 @@
-﻿using System.Collections;
+﻿#define ANZU_SDK_USED
+
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEditor;
 using UnityEditor.SceneManagement;
+
+
 
 [InitializeOnLoad]
 public static class DefaultSceneLoader
@@ -14,6 +19,7 @@ public static class DefaultSceneLoader
     static DefaultSceneLoader()
     {
         EditorApplication.update += Update;
+        DownloadSDKDialogueWindow.Init();
     }
 
     static void LoadSampleScene()

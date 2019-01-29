@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using anzu;
 
+#if ANZU_SDK_USED
+
+using anzu;
 
 [RequireComponent(typeof(AnimatedTextureStats))]
 public class AnzuTextureStatsListener : MonoBehaviour
@@ -22,3 +24,5 @@ public class AnzuTextureStatsListener : MonoBehaviour
         }
     }
 }
+
+#endif
