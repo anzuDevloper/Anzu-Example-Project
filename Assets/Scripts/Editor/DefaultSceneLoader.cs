@@ -19,7 +19,7 @@ public static class DefaultSceneLoader
     static DefaultSceneLoader()
     {
         EditorApplication.update += Update;
-        DownloadSDKDialogueWindow.Init();
+        RandomizeInSelection.Init();
     }
 
     static void LoadSampleScene()
