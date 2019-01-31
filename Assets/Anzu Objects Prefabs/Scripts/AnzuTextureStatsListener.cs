@@ -11,10 +11,12 @@ public class AnzuTextureStatsListener : MonoBehaviour
 {
     AnimatedTextureStats PlacementStats;
 
+
     private void Awake()
     {
         PlacementStats = GetComponent<AnimatedTextureStats>();
     }
+
 
     private void OnMouseDown()
     {

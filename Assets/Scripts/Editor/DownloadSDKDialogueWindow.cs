@@ -1,12 +1,12 @@
-﻿//using System;
-using System.Reflection;
+﻿using System.Reflection;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
 
-public class RandomizeInSelection : EditorWindow
+
+public class DownloadSDKDialogueWindow : EditorWindow
 {
     public const string Description = "Please follow the link below to download the latest version of Anzu SDK, \nor click the Download SDK button.";
     public const string LinkSDK = "https://s3.amazonaws.com/anzu-sdk/anzu-latest.unitypackage";
@@ -15,16 +15,17 @@ public class RandomizeInSelection : EditorWindow
     GUIStyle linkGuiStyle = new GUIStyle();
     GUIStyle buttonFirstGuiStyle = new GUIStyle();
     GUIStyle buttonSecondGuiStyle = new GUIStyle();
+    
 
-    //[MenuItem("Example/No SDK found")]
     public static void Init()
     {
-        RandomizeInSelection window = ScriptableObject.CreateInstance(typeof(RandomizeInSelection)) as RandomizeInSelection;
+        DownloadSDKDialogueWindow window = ScriptableObject.CreateInstance(typeof(DownloadSDKDialogueWindow)) as DownloadSDKDialogueWindow;
         window.titleContent.text = "No SDK found";
         window.minSize = new Vector2(500, 200);
         window.maxSize = new Vector2(500, 200);
         window.ShowUtility();
     }
+    
     
     void OnGUI()
     {
@@ -73,74 +74,9 @@ public class RandomizeInSelection : EditorWindow
         }
     }
 
+
     void OnInspectorUpdate()
     {
         Repaint();
     }
-}
-
-
-
-//public class ShowPopupExample : EditorWindow
-//{
-//    [MenuItem("Example/ShowPopup Example")]
-//    static void Init()
-//    {
-//        ShowPopupExample window = ScriptableObject.CreateInstance<ShowPopupExample>();
-//        window.position = new Rect(Screen.width / 2, Screen.height / 2, 250, 150);
-//        window.ShowPopup();
-//    }
-
-//    void OnGUI()
-//    {
-//        EditorGUILayout.LabelField("This is an example of EditorWindow.ShowPopup", EditorStyles.wordWrappedLabel);
-//        EditorGUILayout.LabelField("This is an example of EditorWindow.ShowPopup", EditorStyles.radioButton);
-//        EditorGUILayout.LabelField("This is an example of EditorWindow.ShowPopup", EditorStyles.objectField);
-//        EditorGUILayout.LabelField("This is an example of EditorWindow.ShowPopup", EditorStyles.colorField);
-//        GUILayout.Space(70);
-//        if (GUILayout.Button("Agree!")) this.Close();
-//    }
-//}
-
-
-
-public class DownloadSDKDialogueWindow : EditorWindow
-{
-    public static void Init()
-    {
-        //if (!NamespaceExists("anzu"))
-        //{
-        //    OfferToDownloadSDK();
-        //}
-    }
-
-    //public static bool NamespaceExists(string desiredNamespace)
-    //{
-    //    foreach (Assembly assembly in AppDomain.CurrentDomain.GetAssemblies())
-    //    {
-    //        foreach (Type type in assembly.GetTypes())
-    //        {
-    //            if (type.Namespace == desiredNamespace)
-    //                return true;
-    //        }
-    //    }
-    //    return false;
-    //}
-
-    //static void OfferToDownloadSDK()
-    //{
-    //    bool dialogueWindow = EditorUtility.DisplayDialog("No Anzu SDK found",
-    //    "Do you want to download the latest version of the Anzu SDK? https://s3.amazonaws.com/anzu-sdk/anzu-latest.unitypackage",
-    //    "Download SDK",
-    //    "Later");
-
-    //    if (dialogueWindow)
-    //    {
-    //        Application.OpenURL("https://s3.amazonaws.com/anzu-sdk/anzu-latest.unitypackage");
-    //    }
-    //    else
-    //    {
-    //        Debug.Log("Follow this link <Color=blue>https://s3.amazonaws.com/anzu-sdk/anzu-latest.unitypackage</Color> to download the latest version of the Anzu SDK");
-    //    }
-    //}
 }

@@ -28,6 +28,7 @@ public class AnzuTextureStatsManager : MonoBehaviour
         }
     }
 
+
     private void Awake()
     {
         PlacementsStats = FindObjectsOfType<AnimatedTextureStats>();
@@ -41,10 +42,12 @@ public class AnzuTextureStatsManager : MonoBehaviour
         }
     }
 
+
     private void Start()
     {
         ShowTextureStats = false;
     }
+
 
     private void Update()
     {
