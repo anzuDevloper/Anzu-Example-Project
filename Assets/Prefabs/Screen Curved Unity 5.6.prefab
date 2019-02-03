@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 64053085884710692}
   - component: {fileID: 114427488850132686}
   - component: {fileID: 114600703595279130}
-  - component: {fileID: 114913817315165542}
+  - component: {fileID: 114874928768596098}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -213,7 +213,7 @@ MonoBehaviour:
   defaultClip: Placement 16x9.jpg
   fallbackTimeout: 5
   logoPlacements: []
---- !u!114 &114913817315165542
+--- !u!114 &114874928768596098
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -221,6 +221,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1036908722749998}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 098ab09d152191c4baad85214498a631, type: 3}
+  m_Script: {fileID: 11500000, guid: 8cbb9f9d244ed284db55c9cf8b72001e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

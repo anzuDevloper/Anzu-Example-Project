@@ -2,13 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-#if ANZU_SDK_USED
-
-using anzu;
 
 public class AnzuTextureStatsManager : MonoBehaviour
 {
-    [HideInInspector] public AnimatedTextureStats[] PlacementsStats;
+    [HideInInspector] public MonoBehaviour[] PlacementsStats;
 
     bool showTextureStats = false;
     public bool ShowTextureStats
@@ -21,7 +18,7 @@ public class AnzuTextureStatsManager : MonoBehaviour
         {
             showTextureStats = value;
 
-            foreach (AnimatedTextureStats stats in PlacementsStats)
+            foreach (MonoBehaviour stats in PlacementsStats)
             {
                 stats.enabled = showTextureStats;
             }
@@ -31,13 +28,18 @@ public class AnzuTextureStatsManager : MonoBehaviour
 
     private void Awake()
     {
-        PlacementsStats = FindObjectsOfType<AnimatedTextureStats>();
+        System.Type animatedTextureStats = System.Type.GetType("AnimatedTextureStats");
 
-        foreach (AnimatedTextureStats stats in PlacementsStats)
+        if (animatedTextureStats != null)
         {
-            if (stats.GetComponent<AnzuTextureStatsListener>() == null)
+            PlacementsStats = FindObjectsOfType(animatedTextureStats) as MonoBehaviour[];
+
+            foreach (MonoBehaviour stats in PlacementsStats)
             {
-                stats.gameObject.AddComponent<AnzuTextureStatsListener>();
+                if (stats.GetComponent<AnzuTextureStatsListener>() == null)
+                {
+                    stats.gameObject.AddComponent<AnzuTextureStatsListener>();
+                }
             }
         }
     }
@@ -57,5 +59,3 @@ public class AnzuTextureStatsManager : MonoBehaviour
         }
     }
 }
-
-#endif

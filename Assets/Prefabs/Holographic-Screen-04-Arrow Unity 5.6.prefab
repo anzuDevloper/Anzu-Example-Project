@@ -56,8 +56,8 @@ GameObject:
   - component: {fileID: 64200831889790778}
   - component: {fileID: 114811760141207044}
   - component: {fileID: 114093186395148032}
-  - component: {fileID: 114076105069354526}
   - component: {fileID: 95394728308631822}
+  - component: {fileID: 114819043328053272}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -303,17 +303,6 @@ MonoBehaviour:
   colNumber: 0
   totalCells: 8
   fps: 8
---- !u!114 &114076105069354526
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1741766744763648}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 098ab09d152191c4baad85214498a631, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114093186395148032
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -359,3 +348,14 @@ MonoBehaviour:
   defaultClip: Placement 1x1 FlipY.jpg
   fallbackTimeout: 5
   logoPlacements: []
+--- !u!114 &114819043328053272
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1741766744763648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cbb9f9d244ed284db55c9cf8b72001e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

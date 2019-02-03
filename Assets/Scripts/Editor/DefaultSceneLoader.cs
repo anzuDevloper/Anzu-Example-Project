@@ -1,11 +1,12 @@
-﻿#define ANZU_SDK_USED
-
+﻿using System;
+using System.Reflection;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEditor;
 using UnityEditor.SceneManagement;
+using System.IO;
 
 
 
@@ -13,13 +14,17 @@ using UnityEditor.SceneManagement;
 public static class DefaultSceneLoader
 {
     static Scene scene;
+
     static string DefaultScenePath = "Assets/Scenes/SampleScene.unity";
     static float TimeSinceStartupDelay = 12;
     static float DefaultSceneLoadDelay = 13;
     static float SDKNotificationDelay = 15;
     static bool IsNotificationShown = false;
-    
 
+
+    /// <summary>
+    /// Although is it supposed to run only once when Unity starts, it actually runs 3 times !!! That's why it is important to check the IsProjectLoaded property before starting anything
+    /// </summary>
     static bool IsProjectLoaded
     {
         get
@@ -56,8 +61,9 @@ public static class DefaultSceneLoader
     }
 
 
+
     /// <summary>
-    /// Although is it supposed to run only once when Unity starts, it actually runs 3 times !!!
+    /// Although is it supposed to run only once when Unity starts, it actually runs 3 times !!! That's why it is important to check the IsProjectLoaded property before starting anything
     /// </summary>
     static DefaultSceneLoader()
     {
@@ -69,6 +75,7 @@ public static class DefaultSceneLoader
     }
     
 
+
     static void LoadDefaultScene()
     {
         if (!EditorApplication.isPlaying)
@@ -78,7 +85,23 @@ public static class DefaultSceneLoader
         }
     }
 
-    
+
+
+    public static bool NamespaceExists(string desiredNamespace)
+    {
+        foreach (Assembly assembly in AppDomain.CurrentDomain.GetAssemblies())
+        {
+            foreach (Type type in assembly.GetTypes())
+            {
+                if (type.Namespace == desiredNamespace)
+                    return true;
+            }
+        }
+        return false;
+    }
+
+
+
     static void Update()
     {
         if (CanLoadDefaultScene && !IsDefaultSceneLoaded)
@@ -86,13 +109,14 @@ public static class DefaultSceneLoader
             LoadDefaultScene();
         }
 
-        if (CanShowNotification && !IsNotificationShown)
+        if (CanShowNotification && !IsNotificationShown && !DownloadSDKDialogueWindow.IsWindowExists)
         {
-            EditorApplication.update -= Update;
-            DownloadSDKDialogueWindow.Init();
             IsNotificationShown = true;
 
-            Debug.Log("Follow this link <Color=blue>" + DownloadSDKDialogueWindow.LinkSDK + "</Color> to download the latest version of the Anzu SDK");
+            if (!NamespaceExists("anzu"))
+            {
+                DownloadSDKDialogueWindow.Init();
+            }
         }
     }
 }

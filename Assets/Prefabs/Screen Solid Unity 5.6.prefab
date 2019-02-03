@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 23387033731455314}
   - component: {fileID: 114709972940668376}
   - component: {fileID: 114829119986020436}
-  - component: {fileID: 114379129542281568}
+  - component: {fileID: 114933012841899380}
   m_Layer: 0
   m_Name: Monitor
   m_TagString: Untagged
@@ -168,17 +168,6 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &114379129542281568
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1122041911674592}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 098ab09d152191c4baad85214498a631, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114709972940668376
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -224,3 +213,14 @@ MonoBehaviour:
   defaultClip: Placement 2x3 Shrink to Fit.jpg
   fallbackTimeout: 5
   logoPlacements: []
+--- !u!114 &114933012841899380
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1122041911674592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cbb9f9d244ed284db55c9cf8b72001e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

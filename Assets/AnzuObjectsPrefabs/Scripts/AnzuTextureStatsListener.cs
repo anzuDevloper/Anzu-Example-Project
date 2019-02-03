@@ -2,29 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-#if ANZU_SDK_USED
 
-using anzu;
-
-[RequireComponent(typeof(AnimatedTextureStats))]
 public class AnzuTextureStatsListener : MonoBehaviour
 {
-    AnimatedTextureStats PlacementStats;
-
-
+    MonoBehaviour PlacementStats;
+    
     private void Awake()
     {
-        PlacementStats = GetComponent<AnimatedTextureStats>();
+        PlacementStats = GetComponent("AnimatedTextureStats") as MonoBehaviour;
     }
-
-
+    
     private void OnMouseDown()
     {
-        if (!OverlayController.IsActive)
+        if (!OverlayController.IsActive && (PlacementStats != null))
         {
             PlacementStats.enabled = !PlacementStats.enabled;
         }
     }
 }
-
-#endif

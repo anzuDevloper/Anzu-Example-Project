@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿using System;
+using System.Reflection;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,7 +16,16 @@ public class DownloadSDKDialogueWindow : EditorWindow
     GUIStyle linkGuiStyle = new GUIStyle();
     GUIStyle buttonFirstGuiStyle = new GUIStyle();
     GUIStyle buttonSecondGuiStyle = new GUIStyle();
-    
+
+    static DownloadSDKDialogueWindow window = null;
+
+    public static bool IsWindowExists
+    {
+        get
+        {
+            return window != null;
+        }
+    }
 
     public static void Init()
     {
@@ -23,7 +33,9 @@ public class DownloadSDKDialogueWindow : EditorWindow
         window.titleContent.text = "No SDK found";
         window.minSize = new Vector2(500, 200);
         window.maxSize = new Vector2(500, 200);
+        window.position = Rect.zero;
         window.ShowUtility();
+        Debug.Log("Follow this link <Color=blue>" + DownloadSDKDialogueWindow.LinkSDK + "</Color> to download the latest version of the Anzu SDK");
     }
     
     
