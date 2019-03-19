@@ -43,4 +43,12 @@ public class OverlayController : MonoBehaviour
             return Instance.gameObject.activeSelf;
         }
     }
+
+    private void Update()
+    {
+        if (Input.anyKeyDown && !isAlreadyDeactivated)
+        {
+            OnOverlayClick();
+        }
+    }
 }

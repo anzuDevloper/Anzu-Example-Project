@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class AnzuTextureStatsManager : MonoBehaviour
 {
-    [HideInInspector] public MonoBehaviour[] PlacementsStats;
+    List<MonoBehaviour> PlacementsStats = new List<MonoBehaviour>();
 
     bool showTextureStats = false;
     public bool ShowTextureStats
@@ -28,18 +28,16 @@ public class AnzuTextureStatsManager : MonoBehaviour
 
     private void Awake()
     {
-        System.Type animatedTextureStats = System.Type.GetType("AnimatedTextureStats");
+        AnzuTextureStatsListener[] statsListeners = FindObjectsOfType<AnzuTextureStatsListener>();
+        MonoBehaviour stats = null;
 
-        if (animatedTextureStats != null)
+        foreach (AnzuTextureStatsListener statsListener in statsListeners)
         {
-            PlacementsStats = FindObjectsOfType(animatedTextureStats) as MonoBehaviour[];
+            stats = statsListener.GetComponent("AnimatedTextureStats") as MonoBehaviour;
 
-            foreach (MonoBehaviour stats in PlacementsStats)
+            if (stats != null)
             {
-                if (stats.GetComponent<AnzuTextureStatsListener>() == null)
-                {
-                    stats.gameObject.AddComponent<AnzuTextureStatsListener>();
-                }
+                PlacementsStats.Add(stats);
             }
         }
     }
@@ -53,7 +51,7 @@ public class AnzuTextureStatsManager : MonoBehaviour
 
     private void Update()
     {
-        if ((Input.GetKeyDown(KeyCode.Space)) && !OverlayController.IsActive)
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Toggle Stats")) && !OverlayController.IsActive)
         {
             ShowTextureStats = !ShowTextureStats;
         }
